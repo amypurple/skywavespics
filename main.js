@@ -8,8 +8,8 @@ var http = require('http'),
 http.createServer(function (req, res) {
     //use the url to parse the requested url and get the image name
     var query = url.parse(req.url,true).query;
-        pic = query.pic.toLowerCase();
-        thumbnail = query.thumbnail.toLowerCase();
+        pic = query.pic;
+        thumbnail = query.thumbnail;
     if (!thumbnail)
     {
         if (!pic) {
