@@ -8,10 +8,8 @@ var http = require('http'),
 http.createServer(function (req, res) {
     //use the url to parse the requested url and get the image name
     var query = url.parse(req.url,true).query;
-        pic = query.pic;
-        thumbnail = query.thumbnail;
-        console.log(`pic ${pic}`);
-        console.log(`thumbnail ${thumbnail}`);
+        pic = query.pic.toLowerCase();
+        thumbnail = query.thumbnail.toLowerCase();
     if (!thumbnail)
     {
         if (!pic) {
@@ -35,6 +33,6 @@ http.createServer(function (req, res) {
             res.end(content);
         }
     });
-}).listen(3333);
+}).listen(8080);
 
-console.log("Server running at http://localhost:3333/");
+console.log("Server running at http://localhost:8080/");
